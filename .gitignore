@@ -1,13 +1,19 @@
-# Python
+# Python cache
 __pycache__/
 *.pyc
 
-# Virtual env
+# Virtual environment
 osint_env/
 
-# Data & Reports
+# Data & Reports (generated files, not source code)
 data/osint.db
 reports/
 
-# Secrets
+# Secrets (API keys, tokens)
 .env
+
+# Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints/
+
+# VS Code settings (optional)
+.vscode/
