@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+osint_env/
+
+# Data & Reports
+data/osint.db
+reports/
+
+# Secrets
+.env
