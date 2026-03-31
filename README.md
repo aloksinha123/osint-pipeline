@@ -1,6 +1,10 @@
 # 📡 OSINT Intelligence & Sentiment Pipeline
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_svg)](https://osint-pipeline-o3k9o3vvf5t36djbqeldqi.streamlit.app)
+
 An automated, multi-platform intelligence pipeline that collects, extracts, and analyzes user-sentiment data across five major platforms: **Twitter**, **Reddit**, **GitHub**, **Hacker News**, and **YouTube**.
+
+🚀 **[Try the Live Dashboard Now!](https://osint-pipeline-o3k9o3vvf5t36djbqeldqi.streamlit.app)**
 
 ---
 
