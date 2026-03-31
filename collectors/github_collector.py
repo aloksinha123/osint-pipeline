@@ -1,11 +1,3 @@
-# collectors/github_collector.py
-import os
-from github import Github
-from dotenv import load_dotenv
-
-load_dotenv()
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-
 def fetch_github(query="osint", limit=10):
     """
     Fetch repositories from GitHub using a search query.
@@ -13,10 +5,13 @@ def fetch_github(query="osint", limit=10):
     """
     results = []
     try:
-        if GITHUB_TOKEN:
-            g = Github(GITHUB_TOKEN)
+        token = os.getenv("GITHUB_TOKEN")
+        if token:
+            from github import Github
+            g = Github(token)
         else:
-            print("⚠️ No GitHub token found in .env, using unauthenticated access (very limited).")
+            print("⚠️ No GitHub token found in secrets, using unauthenticated access (very limited).")
+            from github import Github
             g = Github()
 
         repos = g.search_repositories(query=query, sort="stars", order="desc")
