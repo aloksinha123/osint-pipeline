@@ -1,7 +1,8 @@
-# main.py
 from collectors.twitter_collector import fetch_twitter
 from collectors.reddit_collector import fetch_reddit
 from collectors.github_collector import fetch_github
+from collectors.hacker_news_collector import fetch_hn
+from collectors.youtube_collector import fetch_youtube
 
 from utils.cleaner import clean_text, filter_english
 from utils.database import save_to_db, load_from_db
@@ -13,10 +14,13 @@ def run_pipeline():
 
     print("🧹 Cleaning text...")
     # Collect
-    twitter_records = fetch_twitter("AI", 10)
+    twitter_records = fetch_twitter("OSINT", 10)
     reddit_records = fetch_reddit("technology", 10, sort="hot")
     github_records = fetch_github("osint", 10)
-    data.extend(twitter_records + reddit_records + github_records)
+    hn_records = fetch_hn(10)
+    yt_records = fetch_youtube("OSINT cybersecurity", 10)
+    
+    data.extend(twitter_records + reddit_records + github_records + hn_records + yt_records)
 
     # Clean
     for d in data:
