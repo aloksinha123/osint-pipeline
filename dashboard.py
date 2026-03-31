@@ -1,4 +1,3 @@
-# dashboard.py
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -7,6 +6,14 @@ import sqlite3
 from datetime import datetime
 from collections import Counter
 import re
+import nltk
+
+# Download required NLTK data for sentiment analysis
+try:
+    nltk.download('punkt')
+    nltk.download('punkt_tab')
+except:
+    pass
 
 # Import your collectors
 from collectors.twitter_collector import fetch_twitter
